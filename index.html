@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>State of Local AI Inference 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0b0e17;
+      --surface: #111827;
+      --surface2: #1a2233;
+      --border: #1e2d45;
+      --accent: #38bdf8;
+      --accent2: #7c3aed;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --heading: #f0f9ff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', 'Times New Roman', serif;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    header img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+      opacity: 0.85;
+    }
+
+    header .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(11,14,23,0.15) 0%, rgba(11,14,23,0.85) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 2.5rem 1.5rem;
+    }
+
+    header h1 {
+      font-family: 'Georgia', serif;
+      font-size: clamp(1.6rem, 5vw, 3rem);
+      color: #fff;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+    }
+
+    header .meta {
+      margin-top: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Audio player ── */
+    .audio-wrap {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .audio-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      white-space: nowrap;
+      font-family: 'Courier New', monospace;
+    }
+
+    audio {
+      flex: 1;
+      min-width: 260px;
+      height: 36px;
+      outline: none;
+      filter: invert(0.05);
+    }
+
+    audio::-webkit-media-controls-panel {
+      background: var(--surface2);
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* ── Section headings ── */
+    h2 {
+      font-family: 'Georgia', serif;
+      font-size: 1.55rem;
+      color: var(--heading);
+      margin: 3rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 3rem;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    /* ── Paragraphs ── */
+    p {
+      margin-bottom: 1.2rem;
+      color: var(--text);
+    }
+
+    strong {
+      color: var(--heading);
+    }
+
+    /* ── Sources list ── */
+    ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    ol li {
+      margin-bottom: 0.55rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    ol li a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    ol li a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: 'Courier New', monospace;
+    }
+
+    footer span {
+      color: var(--accent);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 540px) {
+      .audio-wrap { padding: 1rem; }
+      main { padding: 2rem 1rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cover Image Header -->
+  <header>
+    <img src="cover.png" alt="Abstract neural network visualization representing local AI inference" />
+    <div class="overlay">
+      <h1>State of Local AI Inference 2026</h1>
+      <p class="meta">Intelligence Package &mdash; August 2026</p>
+    </div>
+  </header>
+
+  <!-- Narration Audio Player -->
+  <div class="audio-wrap">
+    <span class="audio-label">&#9654; Narrated Summary</span>
+    <audio controls src="narration.mp3" preload="metadata">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Brief Content -->
+  <main>
+
+    <h2>Executive Summary</h2>
+    <p>Mid-2026 is the inflection point where running serious AI locally stopped being a hobbyist pursuit and became a legitimate production strategy. The open-weight model ecosystem has matured dramatically: you can run a 32-billion-parameter model on a MacBook Pro, hit 150+ tokens per second on a consumer GPU with the right runtime, and make meaningful quality-vs-speed tradeoffs through quantization formats that have stabilized around a handful of proven standards.</p>
+    <p>Three hardware stories dominate: Apple Silicon&rsquo;s M3/M4 generation with unified memory pools up to 128GB, NVIDIA&rsquo;s RTX 40/50-series with dedicated VRAM and GPU-optimized inference stacks, and AMD&rsquo;s surprise entrant &mdash; the Strix Halo architecture (Ryzen AI Max+ 395) that benchmarks faster than Apple M3 Max at a fraction of the price in some configurations. The days of &ldquo;local AI is too slow&rdquo; are over. The question now is which combination of model, runtime, quantization, and hardware fits your workload.</p>
+
+    <h2>Model Landscape</h2>
+    <p>Five model families own the open-weight space heading into mid-2026.</p>
+    <p><strong>Llama 3.1/3.3 (Meta)</strong> remains the reference architecture. The 8B variant is the benchmark baseline every runtime targets first, delivering 53.5 tok/s on M3 Max via llama.cpp and a remarkable 170 tok/s on AMD Strix Halo. The 70B model &mdash; accessible via multi-GPU vLLM or large unified-memory Macs &mdash; represents the ceiling of what consumer hardware can run without cloud augmentation. Llama 3.3 70B at GPTQ quantization on dual RTX 4090s delivers 40 tok/s, genuinely usable for batch inference.</p>
+    <p><strong>Qwen2.5 (Alibaba)</strong> is the sleeper hit. The 7B coder variant punches above its weight class in coding tasks, while the 32B model balances capability and hardware fit better than most competitors &mdash; landing at 20GB in Q4_K_M with 14 tok/s on M3 Max or a blistering 101 tok/s on Strix Halo. Qwen2.5 72B via MLX 4-bit on a 128GB Mac runs at 7.5&ndash;10.5 tok/s: too slow for interactive use but viable for batch jobs and RAG pipelines with caching.</p>
+    <p><strong>Gemma 3 (Google)</strong> introduced a 27B model that holds the sweet spot for Apple Silicon users: fits in 16GB at MLX 4-bit quantization and runs at 19&ndash;26 tok/s depending on M3 or M4 Max &mdash; a real 37% generational jump. The 12B variant is the workhorse for users with 16&ndash;24GB unified memory.</p>
+    <p><strong>Mistral Small 24B</strong> is the strongest all-around local model in 2026. It consistently delivers GPT-4-class reasoning across diverse tasks while fitting in 14GB at Q4 quantization &mdash; leaving headroom for context and system overhead on both Mac and NVIDIA platforms. On RTX hardware with vLLM, it hits 62.5 tok/s on a single 4090 and 115 tok/s on the 5090.</p>
+    <p><strong>DeepSeek-R1-Distill variants</strong> rewrote expectations for reasoning tasks. The 7B distill at GPTQ on a single RTX 4090 delivers 110 tok/s with chain-of-thought reasoning &mdash; outperforming models twice its size on math and coding benchmarks. The 32B distill is the reasoning ceiling for 24GB GPUs: AWQ puts it at 20GB VRAM utilization, leaving room for inference at 32.5 tok/s on a 4090, and scaling to 90 tok/s on the 5090.</p>
+
+    <h2>Runtime Comparison</h2>
+    <p><strong>llama.cpp</strong> is the universal baseline &mdash; cross-platform, CPU+GPU hybrid, and first to support new GGUF quantization variants. Peak performance: 53.5 tok/s on M3 Max for Llama 8B. Where it excels: maximum hardware compatibility, quantization breadth, and offline-first deployments. Where it lags: throughput ceiling is lower than GPU-optimized runtimes; primarily single-user focused.</p>
+    <p><strong>Ollama</strong> wraps llama.cpp in a Docker-like model management layer with a local REST API. The throughput penalty vs raw llama.cpp is modest (46.2 vs 53.5 tok/s on M3 Max for Llama 8B) but the developer experience is dramatically better: <code>ollama run qwen2.5:32b</code> and you&rsquo;re running within minutes. It&rsquo;s the default choice for local development and single-user workflows.</p>
+    <p><strong>vLLM</strong> is the GPU throughput winner, and it isn&rsquo;t close. Mistral 7B AWQ on a single RTX 4090 delivers 150 tok/s &mdash; roughly 3&times; what Ollama achieves on Apple Silicon for the same model class. The 5090 pushes that to 232.5 tok/s. vLLM&rsquo;s continuous batching and PagedAttention make it the right call for multi-user inference servers or any workload where latency matters. Requires CUDA; no Apple Silicon support.</p>
+    <p><strong>MLX</strong> is Apple&rsquo;s answer to vLLM for M-series chips. The framework uses Metal&rsquo;s unified memory architecture to co-locate weights and compute in a way llama.cpp can&rsquo;t fully exploit. MLX is the correct runtime for any Mac with 32GB+ unified memory running models above 13B parameters &mdash; the 4-bit MLX quantization consistently beats GGUF Q4_K_M in throughput on the same hardware.</p>
+    <p><strong>ONNX Runtime</strong> covers edge deployment, mobile quantization, and cross-platform compatibility. Throughput lags GPU-native runtimes significantly for large models, but if you&rsquo;re shipping inference to end-user hardware you don&rsquo;t control, ONNX is the standard. It&rsquo;s the runtime for applications, not inference servers.</p>
+
+    <h2>Quantization Tradeoffs</h2>
+    <p><strong>GGUF (GGML Unified Format)</strong> is the universal container for llama.cpp and Ollama. The Q4_K_M variant is the community sweet spot: roughly 4.5 bits per weight, ~5&ndash;8% quality loss vs full precision, universally supported across every platform. Q8 gives near-lossless quality at double the RAM cost; Q2 is aggressive compression that noticeably degrades reasoning on complex tasks.</p>
+    <p><strong>AWQ (Activation-Aware Weight Quantization)</strong> targets CUDA runtimes. It applies 4-bit quantization more intelligently than naive rounding by identifying salient weights, preserving quality while achieving the same memory footprint as Q4_K_M. AWQ is the format to use with vLLM on NVIDIA hardware &mdash; pre-quantized models are abundant on Hugging Face for all major model families.</p>
+    <p><strong>GPTQ</strong> is the mature GPU quantization standard, still well-supported by vLLM and ExLlamaV2. Quality is slightly behind AWQ at the same bit-depth for most families, but tooling is mature and GPTQ models appear within days of any major release. The 4090&rsquo;s strong FP16 tensor core performance makes GPTQ more competitive here than on older NVIDIA generations.</p>
+    <p><strong>MLX 4-bit</strong> is Apple-proprietary but the Metal-aware implementation outperforms GGUF Q4 on the same Apple Silicon hardware for mid-to-large models. If you&rsquo;re on an M-series Mac, pull MLX variants from the mlx-community Hugging Face org rather than GGUF when running anything above 13B parameters. The quality-per-gigabyte is measurably better.</p>
+
+    <h2>Hardware Price/Performance</h2>
+    <p><strong>Apple M3/M4 (M-series)</strong> unified memory architecture is the defining hardware story of 2026 for consumer local AI. A 32GB MacBook Pro M4 runs Mistral 24B class models comfortably; a 64GB Mac Studio M4 Max handles 70B quantized models; the 128GB Mac Studio ceiling can run Qwen2.5 72B and Llama 70B at usable speeds. Pricing: $2,000&ndash;$4,200. Key limitation: no CUDA, so vLLM and all CUDA-optimized inference stacks are off the table.</p>
+    <p><strong>NVIDIA RTX 40/50-series</strong> is the throughput choice. A single RTX 4090 (24GB VRAM, ~$1,800&ndash;$2,200 used) running vLLM with AWQ quantization delivers 3&ndash;5&times; the tokens-per-second of equivalent Apple Silicon for 7&ndash;24B models. The RTX 5090 (32GB VRAM) extends the envelope to 32B models on a single card and pushes Mistral 7B to 232.5 tok/s. For production inference servers, a dual-4090 or single-5090 workstation ($3,800&ndash;$9,500 all-in) outperforms Mac Studio on throughput per dollar at scale.</p>
+    <p><strong>AMD Strix Halo (Ryzen AI Max+ 395)</strong> is the unexpected contender of 2026. Laptops with the Max+ 395 and 128GB unified memory hit 170 tok/s on Llama 3.1 8B &mdash; faster than the M3 Max on identical models. More striking: Qwen2.5 32B at Q4_K_M runs at 101 tok/s on Strix Halo vs 14 tok/s on M3 Max 64GB. At $2,799&ndash;$3,200 for top-configured laptops (ASUS ROG, Lenovo Legion), this is the highest tokens-per-dollar value in 2026 for mid-size model inference, with the portability of a laptop.</p>
+
+    <h2>What I'd Run Today</h2>
+    <p><strong>32GB Mac:</strong> Mistral Small 24B via Ollama with MLX 4-bit quantization. Run <code>ollama run mistral-small</code> and it settles into approximately 14GB unified memory, leaving 18GB for the OS, context window, and concurrent processes. You&rsquo;ll see 22&ndash;30 tok/s depending on chip generation &mdash; fast enough for interactive coding assistance, writing, and research. If your primary use case is math or code reasoning specifically, swap to DeepSeek-R1-Distill-Qwen-14B via GGUF Q4_K_M: 9GB footprint, runs on any Mac, and the chain-of-thought output quality is exceptional for the hardware cost.</p>
+    <p><strong>24GB NVIDIA GPU:</strong> Mistral Small 24B via vLLM with AWQ quantization. Install vLLM, pull a pre-quantized AWQ variant from Hugging Face, and serve it: <code>vllm serve --model mistralai/Mistral-Small-24B-Instruct-AWQ</code>. You&rsquo;ll hit 60&ndash;65 tok/s on a single 4090, VRAM usage lands at 14GB with comfortable headroom, and Mistral Small&rsquo;s instruction-following is strong enough that the quality gap vs cloud APIs is negligible for most workflows. If throughput matters above all else and quality can be 7B-class, the DeepSeek-R1-Distill-Qwen-7B at GPTQ is the speed champion: 110 tok/s on only 5.5GB VRAM.</p>
+
+    <h2>Sources</h2>
+    <ol>
+      <li>Inventive HQ &mdash; Apple M3 LLM Benchmarks (Ollama vs llama.cpp): <a href="https://inventivehq.com/apple-m3-llm-benchmark-ollama-vs-llamacpp" target="_blank" rel="noopener">inventivehq.com</a></li>
+      <li>LLMCheck &mdash; Apple Silicon MLX Benchmarks 2026: <a href="https://llmcheck.net/benchmarks/apple-silicon-mlx-2026" target="_blank" rel="noopener">llmcheck.net</a></li>
+      <li>Spheron Network &mdash; vLLM Benchmark RTX 4090/5090: <a href="https://spheron.network/blog/vllm-benchmark-rtx4090-rtx5090-2025" target="_blank" rel="noopener">spheron.network</a></li>
+      <li>LocalScore.ai &mdash; AMD Strix Halo LLM Benchmarks: <a href="https://localscore.ai/amd-strix-halo-llm-benchmarks" target="_blank" rel="noopener">localscore.ai</a></li>
+      <li>Hugging Face mlx-community &mdash; Qwen2.5-72B-Instruct-4bit: <a href="https://huggingface.co/mlx-community/Qwen2.5-72B-Instruct-4bit" target="_blank" rel="noopener">huggingface.co</a></li>
+      <li>GitHub llama.cpp discussions &mdash; Strix Halo Benchmarks: <a href="https://github.com/ggml-org/llama.cpp/discussions/strix-halo-benchmarks" target="_blank" rel="noopener">github.com/ggml-org/llama.cpp</a></li>
+      <li>RunPod Blog &mdash; Llama 3.3 70B Inference Benchmark (vLLM): <a href="https://runpod.io/blog/llama33-70b-inference-benchmark-vllm" target="_blank" rel="noopener">runpod.io</a></li>
+      <li>Perlod.com &mdash; vLLM Mistral 24B RTX Benchmark: <a href="https://perlod.com/vllm-mistral-24b-rtx-benchmark" target="_blank" rel="noopener">perlod.com</a></li>
+      <li>Frame.work Blog &mdash; AMD HX370 Local LLM Benchmarks: <a href="https://frame.work/blog/amd-hx370-local-llm-benchmarks" target="_blank" rel="noopener">frame.work</a></li>
+      <li>LocalAIMaster &mdash; MLX Benchmarks Apple Silicon 2026: <a href="https://localaimaster.com/mlx-benchmarks-apple-silicon-2026" target="_blank" rel="noopener">localaimaster.com</a></li>
+      <li>Reddit r/LocalLLaMA &mdash; M4 Max MLX/Gemma 3/Mistral/DeepSeek community benchmarks (various threads, Aug 2026)</li>
+    </ol>
+
+    <hr />
+    <p style="font-size:0.82rem; color: var(--muted); font-family: 'Courier New', monospace;">
+      Data collected August 1, 2026. All tok/s figures are single-user generation throughput at default context lengths.
+      See companion Google Sheet &lsquo;Local AI Inference 2026 - Benchmarks&rsquo; for full 30-row dataset with source citations.
+    </p>
+
+  </main>
+
+  <footer>
+    Produced by <span>HALIE</span> &mdash; Intelligence Package &mdash; August 2026
+  </footer>
+
+</body>
+</html>
